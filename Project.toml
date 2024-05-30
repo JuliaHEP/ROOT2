@@ -1,0 +1,19 @@
+name = "ROOT2"
+uuid = "b0506e13-49c2-4ce6-b48c-bb2bc691fb3e"
+version = "0.0.1"
+
+[deps]
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+Conda = "8f4d0f93-b110-5947-807f-2305c1781a2d"
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+CxxWrap = "1f15a43c-97ca-5a2a-ae31-89f07a497df4"
+
+[extras]
+UnROOT = "3cd96dde-e98d-4713-81e9-a4a1b0235ce9"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+CxxWrap = "0.14"
+
+[targets]
+test = ["Test", "UnROOT"]
