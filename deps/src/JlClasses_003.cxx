@@ -2147,173 +2147,57 @@ std::shared_ptr<Wrapper> newJlTTreeFriendLeafIter(jlcxx::Module& module){
 }
 
 namespace jlcxx {
-  template<> struct IsMirroredType<FileStat_t> : std::false_type { };
-  template<> struct DefaultConstructible<FileStat_t> : std::false_type { };
+
+  template<typename T>
+  struct BuildParameterList<TBranchPtr<T>>
+  {
+    typedef ParameterList<T> type;
+  };
+
+  template<typename T> struct IsMirroredType<TBranchPtr<T>> : std::false_type { };
+  template<typename T> struct DefaultConstructible<TBranchPtr<T>> : std::false_type { };
 }
 
-// Class generating the wrapper for type FileStat_t
-// signature to use in the veto file: FileStat_t
-struct JlFileStat_t: public Wrapper {
+// Class generating the wrapper for type TBranchPtr
+// signature to use in the veto file: TBranchPtr
+struct JlTBranchPtr: public Wrapper {
 
-  JlFileStat_t(jlcxx::Module& jlModule): Wrapper(jlModule){
-    DEBUG_MSG("Adding wrapper for type FileStat_t (" __HERE__ ")");
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:124:8
-    jlcxx::TypeWrapper<FileStat_t>  t = jlModule.add_type<FileStat_t>("FileStat_t");
-    type_ = std::unique_ptr<jlcxx::TypeWrapper<FileStat_t>>(new jlcxx::TypeWrapper<FileStat_t>(jlModule, t));
+  JlTBranchPtr(jlcxx::Module& jlModule): Wrapper(jlModule){
+    DEBUG_MSG("Adding wrapper for type TBranchPtr (" __HERE__ ")");
+    // defined in src/TBranchPtr.h:13:7
+    jlcxx::TypeWrapper<jlcxx::Parametric<jlcxx::TypeVar<1>>>  t =  jlModule.add_type<jlcxx::Parametric<jlcxx::TypeVar<1>>>("TBranchPtr");
+    type_ = std::unique_ptr<jlcxx::TypeWrapper<jlcxx::Parametric<jlcxx::TypeVar<1>>>>(new jlcxx::TypeWrapper<jlcxx::Parametric<jlcxx::TypeVar<1>>>(jlModule, t));
+    auto t35_decl_methods = [this]<typename T> (jlcxx::TypeWrapper<TBranchPtr<T>> wrapped){
+      auto module_ = this->module_;
+      typedef TBranchPtr<T> WrappedType;
+
+
+      DEBUG_MSG("Adding wrapper for void TBranchPtr::TBranchPtr<T>(TBranch *) (" __HERE__ ")");
+      // defined in src/TBranchPtr.h:17:3
+      wrapped.template constructor<TBranch *>(/*finalize=*/true);
+
+      DEBUG_MSG("Adding wrapper for TBranch * TBranchPtr::operator->() (" __HERE__ ")");
+      // signature to use in the veto list: TBranch * TBranchPtr::operator->()
+      // defined in src/TBranchPtr.h:19:12
+      wrapped.method("arrow", static_cast<TBranch * (WrappedType::*)()  const>(&WrappedType::operator->));
+      module_.set_override_module(jl_base_module);
+
+      DEBUG_MSG("Adding wrapper for TBranch & TBranchPtr::operator*() (" __HERE__ ")");
+      // signature to use in the veto list: TBranch & TBranchPtr::operator*()
+      // defined in src/TBranchPtr.h:20:12
+      wrapped.method("getindex", static_cast<TBranch & (WrappedType::*)()  const>(&WrappedType::operator*));
+
+      module_.unset_override_module();
+    };
+    t.apply<TBranchPtr<std::vector<double>>, TBranchPtr<std::vector<float>>, TBranchPtr<std::vector<unsigned long>>, TBranchPtr<std::vector<long>>, TBranchPtr<std::vector<unsigned int>>, TBranchPtr<std::vector<int>>, TBranchPtr<std::vector<unsigned short>>, TBranchPtr<std::vector<short>>, TBranchPtr<std::vector<unsigned char>>, TBranchPtr<std::vector<char>>, TBranchPtr<double>, TBranchPtr<float>, TBranchPtr<unsigned long>, TBranchPtr<long>, TBranchPtr<unsigned int>, TBranchPtr<int>, TBranchPtr<unsigned short>, TBranchPtr<short>, TBranchPtr<unsigned char>, TBranchPtr<char>>(t35_decl_methods);
   }
 
   void add_methods() const{
-    auto& t = *type_;
-    t.template constructor<>(/*finalize=*/true);
-
-    DEBUG_MSG("Adding fDev methods  to provide read access to the field fDev (" __HERE__ ")");
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:125:13
-    // signature to use in the veto list: FileStat_t::fDev
-    t.method("fDev", [](const FileStat_t& a) -> Long_t { return a.fDev; });
-    t.method("fDev", [](FileStat_t& a) -> Long_t { return a.fDev; });
-    t.method("fDev", [](const FileStat_t* a) -> Long_t { return a->fDev; });
-    t.method("fDev", [](FileStat_t* a) -> Long_t { return a->fDev; });
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:125:13
-    // signature to use in the veto list: FileStat_t::fDev
-    // with ! suffix to veto the setter only.
-    DEBUG_MSG("Adding fDev! methods to provide write access to the field fDev (" __HERE__ ")");
-    t.method("fDev!", [](FileStat_t& a, Long_t val) -> Long_t { return a.fDev = val; });
-
-    DEBUG_MSG("Adding fDev! methods to provide write access to the field fDev (" __HERE__ ")");
-    t.method("fDev!", [](FileStat_t* a, Long_t val) -> Long_t { return a->fDev = val; });
-
-    DEBUG_MSG("Adding fIno methods  to provide read access to the field fIno (" __HERE__ ")");
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:126:13
-    // signature to use in the veto list: FileStat_t::fIno
-    t.method("fIno", [](const FileStat_t& a) -> Long_t { return a.fIno; });
-    t.method("fIno", [](FileStat_t& a) -> Long_t { return a.fIno; });
-    t.method("fIno", [](const FileStat_t* a) -> Long_t { return a->fIno; });
-    t.method("fIno", [](FileStat_t* a) -> Long_t { return a->fIno; });
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:126:13
-    // signature to use in the veto list: FileStat_t::fIno
-    // with ! suffix to veto the setter only.
-    DEBUG_MSG("Adding fIno! methods to provide write access to the field fIno (" __HERE__ ")");
-    t.method("fIno!", [](FileStat_t& a, Long_t val) -> Long_t { return a.fIno = val; });
-
-    DEBUG_MSG("Adding fIno! methods to provide write access to the field fIno (" __HERE__ ")");
-    t.method("fIno!", [](FileStat_t* a, Long_t val) -> Long_t { return a->fIno = val; });
-
-    DEBUG_MSG("Adding fMode methods  to provide read access to the field fMode (" __HERE__ ")");
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:127:13
-    // signature to use in the veto list: FileStat_t::fMode
-    t.method("fMode", [](const FileStat_t& a) -> Int_t { return a.fMode; });
-    t.method("fMode", [](FileStat_t& a) -> Int_t { return a.fMode; });
-    t.method("fMode", [](const FileStat_t* a) -> Int_t { return a->fMode; });
-    t.method("fMode", [](FileStat_t* a) -> Int_t { return a->fMode; });
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:127:13
-    // signature to use in the veto list: FileStat_t::fMode
-    // with ! suffix to veto the setter only.
-    DEBUG_MSG("Adding fMode! methods to provide write access to the field fMode (" __HERE__ ")");
-    t.method("fMode!", [](FileStat_t& a, Int_t val) -> Int_t { return a.fMode = val; });
-
-    DEBUG_MSG("Adding fMode! methods to provide write access to the field fMode (" __HERE__ ")");
-    t.method("fMode!", [](FileStat_t* a, Int_t val) -> Int_t { return a->fMode = val; });
-
-    DEBUG_MSG("Adding fUid methods  to provide read access to the field fUid (" __HERE__ ")");
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:128:13
-    // signature to use in the veto list: FileStat_t::fUid
-    t.method("fUid", [](const FileStat_t& a) -> Int_t { return a.fUid; });
-    t.method("fUid", [](FileStat_t& a) -> Int_t { return a.fUid; });
-    t.method("fUid", [](const FileStat_t* a) -> Int_t { return a->fUid; });
-    t.method("fUid", [](FileStat_t* a) -> Int_t { return a->fUid; });
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:128:13
-    // signature to use in the veto list: FileStat_t::fUid
-    // with ! suffix to veto the setter only.
-    DEBUG_MSG("Adding fUid! methods to provide write access to the field fUid (" __HERE__ ")");
-    t.method("fUid!", [](FileStat_t& a, Int_t val) -> Int_t { return a.fUid = val; });
-
-    DEBUG_MSG("Adding fUid! methods to provide write access to the field fUid (" __HERE__ ")");
-    t.method("fUid!", [](FileStat_t* a, Int_t val) -> Int_t { return a->fUid = val; });
-
-    DEBUG_MSG("Adding fGid methods  to provide read access to the field fGid (" __HERE__ ")");
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:129:13
-    // signature to use in the veto list: FileStat_t::fGid
-    t.method("fGid", [](const FileStat_t& a) -> Int_t { return a.fGid; });
-    t.method("fGid", [](FileStat_t& a) -> Int_t { return a.fGid; });
-    t.method("fGid", [](const FileStat_t* a) -> Int_t { return a->fGid; });
-    t.method("fGid", [](FileStat_t* a) -> Int_t { return a->fGid; });
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:129:13
-    // signature to use in the veto list: FileStat_t::fGid
-    // with ! suffix to veto the setter only.
-    DEBUG_MSG("Adding fGid! methods to provide write access to the field fGid (" __HERE__ ")");
-    t.method("fGid!", [](FileStat_t& a, Int_t val) -> Int_t { return a.fGid = val; });
-
-    DEBUG_MSG("Adding fGid! methods to provide write access to the field fGid (" __HERE__ ")");
-    t.method("fGid!", [](FileStat_t* a, Int_t val) -> Int_t { return a->fGid = val; });
-
-    DEBUG_MSG("Adding fSize methods  to provide read access to the field fSize (" __HERE__ ")");
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:130:13
-    // signature to use in the veto list: FileStat_t::fSize
-    t.method("fSize", [](const FileStat_t& a) -> Long64_t { return a.fSize; });
-    t.method("fSize", [](FileStat_t& a) -> Long64_t { return a.fSize; });
-    t.method("fSize", [](const FileStat_t* a) -> Long64_t { return a->fSize; });
-    t.method("fSize", [](FileStat_t* a) -> Long64_t { return a->fSize; });
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:130:13
-    // signature to use in the veto list: FileStat_t::fSize
-    // with ! suffix to veto the setter only.
-    DEBUG_MSG("Adding fSize! methods to provide write access to the field fSize (" __HERE__ ")");
-    t.method("fSize!", [](FileStat_t& a, Long64_t val) -> Long64_t { return a.fSize = val; });
-
-    DEBUG_MSG("Adding fSize! methods to provide write access to the field fSize (" __HERE__ ")");
-    t.method("fSize!", [](FileStat_t* a, Long64_t val) -> Long64_t { return a->fSize = val; });
-
-    DEBUG_MSG("Adding fMtime methods  to provide read access to the field fMtime (" __HERE__ ")");
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:131:13
-    // signature to use in the veto list: FileStat_t::fMtime
-    t.method("fMtime", [](const FileStat_t& a) -> Long_t { return a.fMtime; });
-    t.method("fMtime", [](FileStat_t& a) -> Long_t { return a.fMtime; });
-    t.method("fMtime", [](const FileStat_t* a) -> Long_t { return a->fMtime; });
-    t.method("fMtime", [](FileStat_t* a) -> Long_t { return a->fMtime; });
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:131:13
-    // signature to use in the veto list: FileStat_t::fMtime
-    // with ! suffix to veto the setter only.
-    DEBUG_MSG("Adding fMtime! methods to provide write access to the field fMtime (" __HERE__ ")");
-    t.method("fMtime!", [](FileStat_t& a, Long_t val) -> Long_t { return a.fMtime = val; });
-
-    DEBUG_MSG("Adding fMtime! methods to provide write access to the field fMtime (" __HERE__ ")");
-    t.method("fMtime!", [](FileStat_t* a, Long_t val) -> Long_t { return a->fMtime = val; });
-
-    DEBUG_MSG("Adding fIsLink methods  to provide read access to the field fIsLink (" __HERE__ ")");
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:132:13
-    // signature to use in the veto list: FileStat_t::fIsLink
-    t.method("fIsLink", [](const FileStat_t& a) -> Bool_t { return a.fIsLink; });
-    t.method("fIsLink", [](FileStat_t& a) -> Bool_t { return a.fIsLink; });
-    t.method("fIsLink", [](const FileStat_t* a) -> Bool_t { return a->fIsLink; });
-    t.method("fIsLink", [](FileStat_t* a) -> Bool_t { return a->fIsLink; });
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:132:13
-    // signature to use in the veto list: FileStat_t::fIsLink
-    // with ! suffix to veto the setter only.
-    DEBUG_MSG("Adding fIsLink! methods to provide write access to the field fIsLink (" __HERE__ ")");
-    t.method("fIsLink!", [](FileStat_t& a, Bool_t val) -> Bool_t { return a.fIsLink = val; });
-
-    DEBUG_MSG("Adding fIsLink! methods to provide write access to the field fIsLink (" __HERE__ ")");
-    t.method("fIsLink!", [](FileStat_t* a, Bool_t val) -> Bool_t { return a->fIsLink = val; });
-
-    DEBUG_MSG("Adding fUrl methods  to provide read access to the field fUrl (" __HERE__ ")");
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:133:13
-    // signature to use in the veto list: FileStat_t::fUrl
-    t.method("fUrl", [](const FileStat_t& a) -> const TString& { return a.fUrl; });
-    t.method("fUrl", [](FileStat_t& a) -> TString& { return a.fUrl; });
-    t.method("fUrl", [](const FileStat_t* a) -> const TString& { return a->fUrl; });
-    t.method("fUrl", [](FileStat_t* a) -> TString& { return a->fUrl; });
-    // defined in /home/pgras/.julia/conda/3/include/TSystem.h:133:13
-    // signature to use in the veto list: FileStat_t::fUrl
-    // with ! suffix to veto the setter only.
-    DEBUG_MSG("Adding fUrl! methods to provide write access to the field fUrl (" __HERE__ ")");
-    t.method("fUrl!", [](FileStat_t& a, const TString& val) -> TString& { return a.fUrl = val; });
-
-    DEBUG_MSG("Adding fUrl! methods to provide write access to the field fUrl (" __HERE__ ")");
-    t.method("fUrl!", [](FileStat_t* a, const TString& val) -> TString& { return a->fUrl = val; });
   }
 
 private:
-  std::unique_ptr<jlcxx::TypeWrapper<FileStat_t>> type_;
+  std::unique_ptr<jlcxx::TypeWrapper<jlcxx::Parametric<jlcxx::TypeVar<1>>>> type_;
 };
-std::shared_ptr<Wrapper> newJlFileStat_t(jlcxx::Module& module){
-  return std::shared_ptr<Wrapper>(new JlFileStat_t(module));
+std::shared_ptr<Wrapper> newJlTBranchPtr(jlcxx::Module& module){
+  return std::shared_ptr<Wrapper>(new JlTBranchPtr(module));
 }

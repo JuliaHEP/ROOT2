@@ -2,12 +2,12 @@
 export Abort, AbstractMethod, AcceptConnection, AccessPathName, Add, AddAllocationCount, AddBinContent
 export AddBranchToCache, AddClass, AddClone, AddDynamicPath, AddFileHandler, AddIncludePath, AddLinkedLibs, AddParameter, AddPoint
 export AddSignalHandler, AddStdExceptionHandler, AddSubList, AddTimer, AddToGlobalList, AddTotBytes, AddZipBytes, AndersonDarlingTest
-export AnnounceTcpService, AnnounceUdpService, AnnounceUnixService, Append, AppendPad, ApplicationName, Apply, Argc, Argv, AutoSave
+export AnnounceTcpService, AnnounceUdpService, AnnounceUnixService, Append, AppendPad, ApplicationName, Apply, Argc, Argv, At, AutoSave
 export BaseName, Beep, Binomial, Branch, BranchOld, BranchRef, BreitWigner, Bronch, BufferEmpty, Build, BuildIndex
 export BuildStreamerInfo, CanBeAlphanumeric, CanExtend, CanExtendAllAxes, CenterLabels, CenterTitle, CentralMoment, ChangeDirectory
 export ChangeFile, ChangeLabel, ChangeLabelByValue, CheckedHash, Chi2Test, Chi2TestX, Chisquare, Chmod, ChooseTimeFormat, Circle
 export ClassName, ClassSaved, CleanCompiledMacros, Clear, ClearInputFiles, ClearPadSave, ClearUnderflowAndOverflow, Cleared
-export Clone, CloneObject, CloneTree, Close, CloseConnection, CloseFiles, Closed, Closelog, Compare, CompileMacro
+export Clone, CloneObject, CloneTree, Close, CloseConnection, CloseFiles, ClosePipe, Closed, Closelog, Compare, CompileMacro
 export ComputeIntegral, ComputeRange, ConcatFileName, Constructor, Contains, Copy, CopyAddresses, CopyEntries, CopyFile, CopyTree, Cp
 export CreateHistogram, Debug, Delete, DeleteCanvasPainter, Derivative, Derivative2, Derivative3, Destructor, DirName, DirectoryAutoAdd
 export DisconnectWidget, DispatchOneEvent, DistancetoPrimitive, Divide, Draw, DrawClass, DrawClone, DrawClonePad, DrawCopy
@@ -83,10 +83,10 @@ export ListSymbols, Load, LoadAllLibraries, LoadBaskets, LoadClass, LoadMacro, L
 export MakeCode, MakeDefCanvas, MakeDirectory, MakeFree, MakeProject, MakeProxy, MakeSelector, Map, Matches, MayNotUse, Mean
 export MemoryFull, Merge, Message, Moment, MoveOpaque, MovePoints, Multiply, MustClean, MustFlush, Next, NextTimeOut, NoLogOpt
 export NoLogoOpt, Notify, NotifyApplicationCreated, Now, Obsolete, OpaqueMoving, OpaqueResizing, Open, OpenConnection
-export OpenDirectory, OpenFile, OpenForumTopic, OpenGitHubIssue, OpenInBrowser, OpenReferenceGuideFor, Openlog, OptimizeBaskets
-export OptimizeStorage, Paint, PaintGrapHist, PaintGraph, PaintStats, ParamsVec, Pick, Picked, Poisson, PoissonD, Pop, PrependPathName
-export Previous, Print, PrintCacheStats, Process, ProcessEvents, ProcessFile, ProcessLine, ProcessLineFast, ProcessLineSync
-export ProcessedEvent, Project, ProxyRead, ProxyReadDefaultImpl, Purge, PutStats, QuitOpt, ROOT!Internal!gROOTLocal
+export OpenDirectory, OpenFile, OpenForumTopic, OpenGitHubIssue, OpenInBrowser, OpenPipe, OpenReferenceGuideFor, Openlog
+export OptimizeBaskets, OptimizeStorage, Paint, PaintGrapHist, PaintGraph, PaintStats, ParamsVec, Pick, Picked, Poisson, PoissonD, Pop
+export PrependPathName, Previous, Print, PrintCacheStats, Process, ProcessEvents, ProcessFile, ProcessLine, ProcessLineFast
+export ProcessLineSync, ProcessedEvent, Project, ProxyRead, ProxyReadDefaultImpl, Purge, PutStats, QuitOpt, ROOT!Internal!gROOTLocal
 export ROOT!Internal!gROOTLocal!, Raise, RaiseWindow, Rannor, ReOpen, Read, ReadAll, ReadBuffer, ReadBufferAsync, ReadBuffers, ReadFile, ReadFree
 export ReadKeys, ReadRandom, ReadStreamerInfo, ReadTObject, ReadingObject, Rebin, RebinAxis, RebinX, Rebuild, Recover
 export RecursiveRemove, RecvBuf, RecvRaw, RedirectOutput, Refresh, RefreshBrowsers, ReleaseParameter, RelocatePaths, Remove
@@ -118,17 +118,17 @@ export SetTimeOffset, SetTimerInterval, SetTitle, SetTitleFont, SetTitleOffset, 
 export SetUniqueID, SetUpdate, SetVectorized, SetWebDisplay, SetWeight, SetWindowPosition, SetWindowSize, SetWritable, SetXTitle
 export SetYTitle, SetZTitle, Setenv, Show, ShowBackground, ShowOutput, ShowPeaks, ShowStreamerInfo, Size, Sizeof, Sleep, Smooth
 export Sort, Sphere, SplitAclicMode, StackTrace, StartIdleing, StartViewer, StopCacheLearningPhase, StopIdleing, Streamer
-export StreamerNVirtual, Subtract, SumBuffer, Sumw2, Symlink, Syslog, TTree!kMaxEntries, TempDirectory, Terminate, TestBit, TestBits
-export Time, ToggleAutoExec, ToggleEditor, ToggleEventStatus, ToggleToolBar, ToggleToolTips, Umask, UnZoom, UnbinnedFit
-export Uniform, UnixPathName, Unlink, Unload, Unsetenv, Update, UpdateAsync, UseCurrentStyle, UseGL, Utime, Variance, Which
-export WorkingDirectory, Write, WriteBuffer, WriteDirHeader, WriteFree, WriteHeader, WriteKeys, WriteObjectAny, WriteRandom
-export WriteStreamerInfo, WriteTObject, Zero, ZoomOut, assign, fBusSpeed, fBusSpeed!, fCpuSpeed, fCpuSpeed!, fCpuSys, fCpuSys!, fCpuType
-export fCpuType!, fCpuUser, fCpuUser!, fCpus, fCpus!, fDev, fDev!, fFile, fFile!, fGid, fGid!, fGroup, fGroup!, fIdle, fIdle!
-export fIno, fIno!, fIsLink, fIsLink!, fL2Cache, fL2Cache!, fLoad15m, fLoad15m!, fLoad1m, fLoad1m!, fLoad5m, fLoad5m!
-export fMemFree, fMemFree!, fMemResident, fMemResident!, fMemTotal, fMemTotal!, fMemUsed, fMemUsed!, fMemVirtual, fMemVirtual!
-export fMode, fMode!, fModel, fModel!, fMtime, fMtime!, fOS, fOS!, fPasswd, fPasswd!, fPhysRam, fPhysRam!, fReadOffSet
-export fReadOffSet!, fRealName, fRealName!, fShell, fShell!, fSize, fSize!, fStdErrDup, fStdErrDup!, fStdErrTty, fStdErrTty!
-export fStdOutDup, fStdOutDup!, fStdOutTty, fStdOutTty!, fSwapFree, fSwapFree!, fSwapTotal, fSwapTotal!, fSwapUsed, fSwapUsed!
-export fSys, fSys!, fTotal, fTotal!, fUid, fUid!, fUrl, fUrl!, fUser, fUser!, gApplication, gApplication!, gProgName
-export gProgPath, gROOTMutex, gROOTMutex!, gRandom, gRandom!, gRootDir, gSystem, gSystem!, gSystemMutex, gSystemMutex!, gXDisplay
-export gXDisplay!, ls, paren, rmdir
+export StreamerNVirtual, Subtract, SumBuffer, Sumw2, Symlink, Syslog, TTree!kMaxEntries, TempDirectory, TempFileName, Terminate, TestBit
+export TestBits, Time, ToggleAutoExec, ToggleEditor, ToggleEventStatus, ToggleToolBar, ToggleToolTips, Umask, UnZoom
+export UnbinnedFit, Uniform, UnixPathName, Unlink, Unload, Unsetenv, Update, UpdateAsync, UseCurrentStyle, UseGL, Utime, Variance
+export Which, WorkingDirectory, Write, WriteBuffer, WriteDirHeader, WriteFree, WriteHeader, WriteKeys, WriteObjectAny
+export WriteRandom, WriteStreamerInfo, WriteTObject, Zero, ZoomOut, arrow, assign, fBusSpeed, fBusSpeed!, fCpuSpeed, fCpuSpeed!
+export fCpuSys, fCpuSys!, fCpuType, fCpuType!, fCpuUser, fCpuUser!, fCpus, fCpus!, fDev, fDev!, fFile, fFile!, fGid, fGid!
+export fGroup, fGroup!, fIdle, fIdle!, fIno, fIno!, fIsLink, fIsLink!, fL2Cache, fL2Cache!, fLoad15m, fLoad15m!, fLoad1m
+export fLoad1m!, fLoad5m, fLoad5m!, fMemFree, fMemFree!, fMemResident, fMemResident!, fMemTotal, fMemTotal!, fMemUsed, fMemUsed!
+export fMemVirtual, fMemVirtual!, fMode, fMode!, fModel, fModel!, fMtime, fMtime!, fOS, fOS!, fPasswd, fPasswd!, fPhysRam
+export fPhysRam!, fReadOffSet, fReadOffSet!, fRealName, fRealName!, fShell, fShell!, fSize, fSize!, fStdErrDup, fStdErrDup!
+export fStdErrTty, fStdErrTty!, fStdOutDup, fStdOutDup!, fStdOutTty, fStdOutTty!, fSwapFree, fSwapFree!, fSwapTotal, fSwapTotal!
+export fSwapUsed, fSwapUsed!, fSys, fSys!, fTotal, fTotal!, fUid, fUid!, fUrl, fUrl!, fUser, fUser!, gApplication, gApplication!
+export gProgName, gProgPath, gROOTMutex, gROOTMutex!, gRandom, gRandom!, gRootDir, gSystem, gSystem!, gSystemMutex, gSystemMutex!
+export gXDisplay, gXDisplay!, ls, paren, rmdir

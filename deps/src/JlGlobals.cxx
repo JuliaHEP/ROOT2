@@ -309,6 +309,326 @@ struct JlGlobal: public Wrapper {
     // defined in /home/pgras/.julia/conda/3/include/TH1.h:662:16
     t.method("R__H", static_cast<TH1 * (*)(const char *) >(&R__H));
 
+    DEBUG_MSG("Adding wrapper for TTree * GetTTree(TDirectoryFile &, const char *) (" __HERE__ ")");
+    // signature to use in the veto list: TTree * GetTTree(TDirectoryFile &, const char *)
+    // defined in src/Templates.h:18:15
+    t.method("GetTTree", static_cast<TTree * (*)(TDirectoryFile &, const char *) >(&GetTTree));
+
+    DEBUG_MSG("Adding wrapper for TH1 * GetTH1(TDirectoryFile &, const char *) (" __HERE__ ")");
+    // signature to use in the veto list: TH1 * GetTH1(TDirectoryFile &, const char *)
+    // defined in src/Templates.h:22:13
+    t.method("GetTH1", static_cast<TH1 * (*)(TDirectoryFile &, const char *) >(&GetTH1));
+
+    DEBUG_MSG("Adding wrapper for size_t length(const TTreeReaderArray<Float_t> &) (" __HERE__ ")");
+    // signature to use in the veto list: size_t length(const TTreeReaderArray<Float_t> &)
+    // defined in src/Templates.h:67:21
+    t.method("length", static_cast<size_t (*)(const TTreeReaderArray<Float_t> &) >(&length));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<Char_t> Branch(TTree &, const char *, Char_t *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<Char_t> Branch(TTree &, const char *, Char_t *, Int_t, Int_t)
+    // defined in src/Templates.h:93:35
+    t.method("Branch", static_cast<TBranchPtr<Char_t> (*)(TTree &, const char *, Char_t *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<UChar_t> Branch(TTree &, const char *, UChar_t *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<UChar_t> Branch(TTree &, const char *, UChar_t *, Int_t, Int_t)
+    // defined in src/Templates.h:94:35
+    t.method("Branch", static_cast<TBranchPtr<UChar_t> (*)(TTree &, const char *, UChar_t *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<Short_t> Branch(TTree &, const char *, Short_t *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<Short_t> Branch(TTree &, const char *, Short_t *, Int_t, Int_t)
+    // defined in src/Templates.h:95:35
+    t.method("Branch", static_cast<TBranchPtr<Short_t> (*)(TTree &, const char *, Short_t *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<UShort_t> Branch(TTree &, const char *, UShort_t *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<UShort_t> Branch(TTree &, const char *, UShort_t *, Int_t, Int_t)
+    // defined in src/Templates.h:96:35
+    t.method("Branch", static_cast<TBranchPtr<UShort_t> (*)(TTree &, const char *, UShort_t *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<Int_t> Branch(TTree &, const char *, Int_t *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<Int_t> Branch(TTree &, const char *, Int_t *, Int_t, Int_t)
+    // defined in src/Templates.h:97:35
+    t.method("Branch", static_cast<TBranchPtr<Int_t> (*)(TTree &, const char *, Int_t *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<UInt_t> Branch(TTree &, const char *, UInt_t *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<UInt_t> Branch(TTree &, const char *, UInt_t *, Int_t, Int_t)
+    // defined in src/Templates.h:98:35
+    t.method("Branch", static_cast<TBranchPtr<UInt_t> (*)(TTree &, const char *, UInt_t *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<Long_t> Branch(TTree &, const char *, Long_t *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<Long_t> Branch(TTree &, const char *, Long_t *, Int_t, Int_t)
+    // defined in src/Templates.h:99:35
+    t.method("Branch", static_cast<TBranchPtr<Long_t> (*)(TTree &, const char *, Long_t *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<ULong_t> Branch(TTree &, const char *, ULong_t *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<ULong_t> Branch(TTree &, const char *, ULong_t *, Int_t, Int_t)
+    // defined in src/Templates.h:100:35
+    t.method("Branch", static_cast<TBranchPtr<ULong_t> (*)(TTree &, const char *, ULong_t *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<Float_t> Branch(TTree &, const char *, Float_t *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<Float_t> Branch(TTree &, const char *, Float_t *, Int_t, Int_t)
+    // defined in src/Templates.h:101:35
+    t.method("Branch", static_cast<TBranchPtr<Float_t> (*)(TTree &, const char *, Float_t *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<Double_t> Branch(TTree &, const char *, Double_t *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<Double_t> Branch(TTree &, const char *, Double_t *, Int_t, Int_t)
+    // defined in src/Templates.h:102:35
+    t.method("Branch", static_cast<TBranchPtr<Double_t> (*)(TTree &, const char *, Double_t *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<std::vector<Char_t>> Branch(TTree &, const char *, std::vector<Char_t> *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<std::vector<Char_t>> Branch(TTree &, const char *, std::vector<Char_t> *, Int_t, Int_t)
+    // defined in src/Templates.h:104:48
+    t.method("Branch", static_cast<TBranchPtr<std::vector<Char_t>> (*)(TTree &, const char *, std::vector<Char_t> *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<std::vector<UChar_t>> Branch(TTree &, const char *, std::vector<UChar_t> *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<std::vector<UChar_t>> Branch(TTree &, const char *, std::vector<UChar_t> *, Int_t, Int_t)
+    // defined in src/Templates.h:105:48
+    t.method("Branch", static_cast<TBranchPtr<std::vector<UChar_t>> (*)(TTree &, const char *, std::vector<UChar_t> *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<std::vector<Short_t>> Branch(TTree &, const char *, std::vector<Short_t> *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<std::vector<Short_t>> Branch(TTree &, const char *, std::vector<Short_t> *, Int_t, Int_t)
+    // defined in src/Templates.h:106:48
+    t.method("Branch", static_cast<TBranchPtr<std::vector<Short_t>> (*)(TTree &, const char *, std::vector<Short_t> *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<std::vector<UShort_t>> Branch(TTree &, const char *, std::vector<UShort_t> *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<std::vector<UShort_t>> Branch(TTree &, const char *, std::vector<UShort_t> *, Int_t, Int_t)
+    // defined in src/Templates.h:107:48
+    t.method("Branch", static_cast<TBranchPtr<std::vector<UShort_t>> (*)(TTree &, const char *, std::vector<UShort_t> *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<std::vector<Int_t>> Branch(TTree &, const char *, std::vector<Int_t> *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<std::vector<Int_t>> Branch(TTree &, const char *, std::vector<Int_t> *, Int_t, Int_t)
+    // defined in src/Templates.h:108:48
+    t.method("Branch", static_cast<TBranchPtr<std::vector<Int_t>> (*)(TTree &, const char *, std::vector<Int_t> *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<std::vector<UInt_t>> Branch(TTree &, const char *, std::vector<UInt_t> *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<std::vector<UInt_t>> Branch(TTree &, const char *, std::vector<UInt_t> *, Int_t, Int_t)
+    // defined in src/Templates.h:109:48
+    t.method("Branch", static_cast<TBranchPtr<std::vector<UInt_t>> (*)(TTree &, const char *, std::vector<UInt_t> *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<std::vector<Long_t>> Branch(TTree &, const char *, std::vector<Long_t> *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<std::vector<Long_t>> Branch(TTree &, const char *, std::vector<Long_t> *, Int_t, Int_t)
+    // defined in src/Templates.h:110:48
+    t.method("Branch", static_cast<TBranchPtr<std::vector<Long_t>> (*)(TTree &, const char *, std::vector<Long_t> *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<std::vector<ULong_t>> Branch(TTree &, const char *, std::vector<ULong_t> *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<std::vector<ULong_t>> Branch(TTree &, const char *, std::vector<ULong_t> *, Int_t, Int_t)
+    // defined in src/Templates.h:111:48
+    t.method("Branch", static_cast<TBranchPtr<std::vector<ULong_t>> (*)(TTree &, const char *, std::vector<ULong_t> *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<std::vector<Float_t>> Branch(TTree &, const char *, std::vector<Float_t> *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<std::vector<Float_t>> Branch(TTree &, const char *, std::vector<Float_t> *, Int_t, Int_t)
+    // defined in src/Templates.h:112:48
+    t.method("Branch", static_cast<TBranchPtr<std::vector<Float_t>> (*)(TTree &, const char *, std::vector<Float_t> *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for TBranchPtr<std::vector<Double_t>> Branch(TTree &, const char *, std::vector<Double_t> *, Int_t, Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: TBranchPtr<std::vector<Double_t>> Branch(TTree &, const char *, std::vector<Double_t> *, Int_t, Int_t)
+    // defined in src/Templates.h:113:48
+    t.method("Branch", static_cast<TBranchPtr<std::vector<Double_t>> (*)(TTree &, const char *, std::vector<Double_t> *, Int_t, Int_t) >(&Branch));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<Char_t>, Char_t *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<Char_t>, Char_t *)
+    // defined in src/Templates.h:115:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<Char_t>, Char_t *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<UChar_t>, UChar_t *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<UChar_t>, UChar_t *)
+    // defined in src/Templates.h:116:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<UChar_t>, UChar_t *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<Short_t>, Short_t *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<Short_t>, Short_t *)
+    // defined in src/Templates.h:117:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<Short_t>, Short_t *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<UShort_t>, UShort_t *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<UShort_t>, UShort_t *)
+    // defined in src/Templates.h:118:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<UShort_t>, UShort_t *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<Int_t>, Int_t *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<Int_t>, Int_t *)
+    // defined in src/Templates.h:119:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<Int_t>, Int_t *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<UInt_t>, UInt_t *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<UInt_t>, UInt_t *)
+    // defined in src/Templates.h:120:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<UInt_t>, UInt_t *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<Long_t>, Long_t *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<Long_t>, Long_t *)
+    // defined in src/Templates.h:121:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<Long_t>, Long_t *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<ULong_t>, ULong_t *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<ULong_t>, ULong_t *)
+    // defined in src/Templates.h:122:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<ULong_t>, ULong_t *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<Float_t>, Float_t *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<Float_t>, Float_t *)
+    // defined in src/Templates.h:123:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<Float_t>, Float_t *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<Double_t>, Double_t *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<Double_t>, Double_t *)
+    // defined in src/Templates.h:124:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<Double_t>, Double_t *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<std::vector<Char_t>>, std::vector<Char_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<std::vector<Char_t>>, std::vector<Char_t> *)
+    // defined in src/Templates.h:126:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<std::vector<Char_t>>, std::vector<Char_t> *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<std::vector<UChar_t>>, std::vector<UChar_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<std::vector<UChar_t>>, std::vector<UChar_t> *)
+    // defined in src/Templates.h:127:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<std::vector<UChar_t>>, std::vector<UChar_t> *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<std::vector<Short_t>>, std::vector<Short_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<std::vector<Short_t>>, std::vector<Short_t> *)
+    // defined in src/Templates.h:128:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<std::vector<Short_t>>, std::vector<Short_t> *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<std::vector<UShort_t>>, std::vector<UShort_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<std::vector<UShort_t>>, std::vector<UShort_t> *)
+    // defined in src/Templates.h:129:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<std::vector<UShort_t>>, std::vector<UShort_t> *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<std::vector<Int_t>>, std::vector<Int_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<std::vector<Int_t>>, std::vector<Int_t> *)
+    // defined in src/Templates.h:130:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<std::vector<Int_t>>, std::vector<Int_t> *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<std::vector<UInt_t>>, std::vector<UInt_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<std::vector<UInt_t>>, std::vector<UInt_t> *)
+    // defined in src/Templates.h:131:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<std::vector<UInt_t>>, std::vector<UInt_t> *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<std::vector<Long_t>>, std::vector<Long_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<std::vector<Long_t>>, std::vector<Long_t> *)
+    // defined in src/Templates.h:132:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<std::vector<Long_t>>, std::vector<Long_t> *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<std::vector<ULong_t>>, std::vector<ULong_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<std::vector<ULong_t>>, std::vector<ULong_t> *)
+    // defined in src/Templates.h:133:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<std::vector<ULong_t>>, std::vector<ULong_t> *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<std::vector<Float_t>>, std::vector<Float_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<std::vector<Float_t>>, std::vector<Float_t> *)
+    // defined in src/Templates.h:134:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<std::vector<Float_t>>, std::vector<Float_t> *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for void SetAddress(TBranchPtr<std::vector<Double_t>>, std::vector<Double_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: void SetAddress(TBranchPtr<std::vector<Double_t>>, std::vector<Double_t> *)
+    // defined in src/Templates.h:135:19
+    t.method("SetAddress", static_cast<void (*)(TBranchPtr<std::vector<Double_t>>, std::vector<Double_t> *) >(&SetAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, Char_t *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, Char_t *)
+    // defined in src/Templates.h:137:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, Char_t *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, UChar_t *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, UChar_t *)
+    // defined in src/Templates.h:138:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, UChar_t *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, Short_t *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, Short_t *)
+    // defined in src/Templates.h:139:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, Short_t *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, UShort_t *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, UShort_t *)
+    // defined in src/Templates.h:140:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, UShort_t *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, Int_t *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, Int_t *)
+    // defined in src/Templates.h:141:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, Int_t *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, UInt_t *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, UInt_t *)
+    // defined in src/Templates.h:142:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, UInt_t *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, Long_t *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, Long_t *)
+    // defined in src/Templates.h:143:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, Long_t *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, ULong_t *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, ULong_t *)
+    // defined in src/Templates.h:144:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, ULong_t *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, Float_t *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, Float_t *)
+    // defined in src/Templates.h:145:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, Float_t *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, Double_t *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, Double_t *)
+    // defined in src/Templates.h:146:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, Double_t *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, std::vector<Char_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, std::vector<Char_t> *)
+    // defined in src/Templates.h:148:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, std::vector<Char_t> *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, std::vector<UChar_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, std::vector<UChar_t> *)
+    // defined in src/Templates.h:149:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, std::vector<UChar_t> *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, std::vector<Short_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, std::vector<Short_t> *)
+    // defined in src/Templates.h:150:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, std::vector<Short_t> *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, std::vector<UShort_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, std::vector<UShort_t> *)
+    // defined in src/Templates.h:151:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, std::vector<UShort_t> *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, std::vector<Int_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, std::vector<Int_t> *)
+    // defined in src/Templates.h:152:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, std::vector<Int_t> *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, std::vector<UInt_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, std::vector<UInt_t> *)
+    // defined in src/Templates.h:153:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, std::vector<UInt_t> *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, std::vector<Long_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, std::vector<Long_t> *)
+    // defined in src/Templates.h:154:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, std::vector<Long_t> *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, std::vector<ULong_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, std::vector<ULong_t> *)
+    // defined in src/Templates.h:155:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, std::vector<ULong_t> *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, std::vector<Float_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, std::vector<Float_t> *)
+    // defined in src/Templates.h:156:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, std::vector<Float_t> *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for Int_t SetBranchAddress(TTree &, const char *, std::vector<Double_t> *) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t SetBranchAddress(TTree &, const char *, std::vector<Double_t> *)
+    // defined in src/Templates.h:157:20
+    t.method("SetBranchAddress", static_cast<Int_t (*)(TTree &, const char *, std::vector<Double_t> *) >(&SetBranchAddress));
+
+    DEBUG_MSG("Adding wrapper for void updateAllCanvas() (" __HERE__ ")");
+    // signature to use in the veto list: void updateAllCanvas()
+    // defined in src/Extra.h:4:6
+    t.method("updateAllCanvas", static_cast<void (*)() >(&updateAllCanvas));
+
     DEBUG_MSG("Adding TTree!kMaxEntries methods to provide access to the global variable TTree::kMaxEntries (" __HERE__ ")");
     // defined in /home/pgras/.julia/conda/3/include/TTree.h:229:30
     module_.method("TTree!kMaxEntries", []()-> Long64_t { return TTree::kMaxEntries; });

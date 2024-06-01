@@ -1,5 +1,7 @@
 # ROOT2
 
+[![Linux](https://github.com/JuliaHEP/ROOT2/actions/workflows/test-linux.yml/badge.svg)](https://github.com/JuliaHEP/ROOT2/actions/workflows/test-linux.yml) [![macOS](https://github.com/JuliaHEP/ROOT2/actions/workflows/test-macos.yml/badge.svg)](https://github.com/JuliaHEP/ROOT2/actions/workflows/test-macos.yml)
+
 ## Introduction
 
 ROOT2 is a Julia interface to the C++ [ROOT Data analysis framework](https://root.cern/) used in the high energy physics community.
@@ -10,6 +12,11 @@ Function documentation for the Julia help command is not yet available. Please r
 
 ROOT2 uses [CxxWrap](https://github.com/JuliaInterop/CxxWrap.jl) to interface to the C++ libraries and the wrappers were generated using [WrapIt!](https://github.com/grasph/wrapit).
 
+
+## Supported platforms
+
+Linux and MacOS.
+
 ## Installation
 
 ```
@@ -17,7 +24,14 @@ import Pkg
 Pkg.add("ROOT2")
 ```
 
-⚠️  Installation or first import may take a while due to code compilation.
+⚠️  Installation can stay several minutes (ten of minutes on macOS) on the following message.
+
+```
+Building ROOT2 → `.../build.log`
+  Progress [=                  ]1/2
+```
+
+This is due to the installation of ROOT and compilation of the wrapper library. **Be patient**. You can open the indicated `build.log` file to see the progress.
 
 ## ROOT version
 

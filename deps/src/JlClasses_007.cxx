@@ -7,6 +7,250 @@
 #include "jlcxx/stl.hpp"
 
 namespace jlcxx {
+  template<> struct IsMirroredType<TRandom> : std::false_type { };
+  template<> struct DefaultConstructible<TRandom> : std::false_type { };
+template<> struct SuperType<TRandom> { typedef TNamed type; };
+}
+
+// Class generating the wrapper for type TRandom
+// signature to use in the veto file: TRandom
+struct JlTRandom: public Wrapper {
+
+  JlTRandom(jlcxx::Module& jlModule): Wrapper(jlModule){
+    DEBUG_MSG("Adding wrapper for type TRandom (" __HERE__ ")");
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:27:7
+    jlcxx::TypeWrapper<TRandom>  t = jlModule.add_type<TRandom>("TRandom",
+      jlcxx::julia_base_type<TNamed>());
+    type_ = std::unique_ptr<jlcxx::TypeWrapper<TRandom>>(new jlcxx::TypeWrapper<TRandom>(jlModule, t));
+  }
+
+  void add_methods() const{
+    auto& t = *type_;
+    t.template constructor<>(/*finalize=*/true);
+
+
+    DEBUG_MSG("Adding wrapper for void TRandom::TRandom(UInt_t) (" __HERE__ ")");
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:33:4
+    t.constructor<UInt_t>(/*finalize=*/true);
+
+    DEBUG_MSG("Adding wrapper for Int_t TRandom::Binomial(Int_t, Double_t) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t TRandom::Binomial(Int_t, Double_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:35:22
+    t.method("Binomial", static_cast<Int_t (TRandom::*)(Int_t, Double_t) >(&TRandom::Binomial));
+
+    DEBUG_MSG("Adding wrapper for Double_t TRandom::BreitWigner(Double_t, Double_t) (" __HERE__ ")");
+    // signature to use in the veto list: Double_t TRandom::BreitWigner(Double_t, Double_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:36:22
+    t.method("BreitWigner", static_cast<Double_t (TRandom::*)(Double_t, Double_t) >(&TRandom::BreitWigner));
+    t.method("BreitWigner", [](TRandom& a)->Double_t { return a.BreitWigner(); });
+    t.method("BreitWigner", [](TRandom& a, Double_t arg0)->Double_t { return a.BreitWigner(arg0); });
+    t.method("BreitWigner", [](TRandom* a)->Double_t { return a->BreitWigner(); });
+    t.method("BreitWigner", [](TRandom* a, Double_t arg0)->Double_t { return a->BreitWigner(arg0); });
+
+    DEBUG_MSG("Adding wrapper for void TRandom::Circle(Double_t &, Double_t &, Double_t) (" __HERE__ ")");
+    // signature to use in the veto list: void TRandom::Circle(Double_t &, Double_t &, Double_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:37:22
+    t.method("Circle", static_cast<void (TRandom::*)(Double_t &, Double_t &, Double_t) >(&TRandom::Circle));
+
+    DEBUG_MSG("Adding wrapper for Double_t TRandom::Exp(Double_t) (" __HERE__ ")");
+    // signature to use in the veto list: Double_t TRandom::Exp(Double_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:38:22
+    t.method("Exp", static_cast<Double_t (TRandom::*)(Double_t) >(&TRandom::Exp));
+
+    DEBUG_MSG("Adding wrapper for Double_t TRandom::Gaus(Double_t, Double_t) (" __HERE__ ")");
+    // signature to use in the veto list: Double_t TRandom::Gaus(Double_t, Double_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:39:22
+    t.method("Gaus", static_cast<Double_t (TRandom::*)(Double_t, Double_t) >(&TRandom::Gaus));
+    t.method("Gaus", [](TRandom& a)->Double_t { return a.Gaus(); });
+    t.method("Gaus", [](TRandom& a, Double_t arg0)->Double_t { return a.Gaus(arg0); });
+    t.method("Gaus", [](TRandom* a)->Double_t { return a->Gaus(); });
+    t.method("Gaus", [](TRandom* a, Double_t arg0)->Double_t { return a->Gaus(arg0); });
+
+    DEBUG_MSG("Adding wrapper for UInt_t TRandom::GetSeed() (" __HERE__ ")");
+    // signature to use in the veto list: UInt_t TRandom::GetSeed()
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:40:22
+    t.method("GetSeed", static_cast<UInt_t (TRandom::*)()  const>(&TRandom::GetSeed));
+
+    DEBUG_MSG("Adding wrapper for UInt_t TRandom::Integer(UInt_t) (" __HERE__ ")");
+    // signature to use in the veto list: UInt_t TRandom::Integer(UInt_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:41:22
+    t.method("Integer", static_cast<UInt_t (TRandom::*)(UInt_t) >(&TRandom::Integer));
+
+    DEBUG_MSG("Adding wrapper for Double_t TRandom::Landau(Double_t, Double_t) (" __HERE__ ")");
+    // signature to use in the veto list: Double_t TRandom::Landau(Double_t, Double_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:42:22
+    t.method("Landau", static_cast<Double_t (TRandom::*)(Double_t, Double_t) >(&TRandom::Landau));
+    t.method("Landau", [](TRandom& a)->Double_t { return a.Landau(); });
+    t.method("Landau", [](TRandom& a, Double_t arg0)->Double_t { return a.Landau(arg0); });
+    t.method("Landau", [](TRandom* a)->Double_t { return a->Landau(); });
+    t.method("Landau", [](TRandom* a, Double_t arg0)->Double_t { return a->Landau(arg0); });
+
+    DEBUG_MSG("Adding wrapper for Int_t TRandom::Poisson(Double_t) (" __HERE__ ")");
+    // signature to use in the veto list: Int_t TRandom::Poisson(Double_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:43:22
+    t.method("Poisson", static_cast<Int_t (TRandom::*)(Double_t) >(&TRandom::Poisson));
+
+    DEBUG_MSG("Adding wrapper for Double_t TRandom::PoissonD(Double_t) (" __HERE__ ")");
+    // signature to use in the veto list: Double_t TRandom::PoissonD(Double_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:44:22
+    t.method("PoissonD", static_cast<Double_t (TRandom::*)(Double_t) >(&TRandom::PoissonD));
+
+    DEBUG_MSG("Adding wrapper for void TRandom::Rannor(Float_t &, Float_t &) (" __HERE__ ")");
+    // signature to use in the veto list: void TRandom::Rannor(Float_t &, Float_t &)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:45:22
+    t.method("Rannor", static_cast<void (TRandom::*)(Float_t &, Float_t &) >(&TRandom::Rannor));
+
+    DEBUG_MSG("Adding wrapper for void TRandom::Rannor(Double_t &, Double_t &) (" __HERE__ ")");
+    // signature to use in the veto list: void TRandom::Rannor(Double_t &, Double_t &)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:46:22
+    t.method("Rannor", static_cast<void (TRandom::*)(Double_t &, Double_t &) >(&TRandom::Rannor));
+
+    DEBUG_MSG("Adding wrapper for void TRandom::ReadRandom(const char *) (" __HERE__ ")");
+    // signature to use in the veto list: void TRandom::ReadRandom(const char *)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:47:22
+    t.method("ReadRandom", static_cast<void (TRandom::*)(const char *) >(&TRandom::ReadRandom));
+
+    DEBUG_MSG("Adding wrapper for void TRandom::SetSeed(ULong_t) (" __HERE__ ")");
+    // signature to use in the veto list: void TRandom::SetSeed(ULong_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:48:22
+    t.method("SetSeed", static_cast<void (TRandom::*)(ULong_t) >(&TRandom::SetSeed));
+    t.method("SetSeed", [](TRandom& a)->void { a.SetSeed(); });
+    t.method("SetSeed", [](TRandom* a)->void { a->SetSeed(); });
+
+    DEBUG_MSG("Adding wrapper for Double_t TRandom::Rndm() (" __HERE__ ")");
+    // signature to use in the veto list: Double_t TRandom::Rndm()
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:49:14
+    t.method("Rndm", static_cast<Double_t (TRandom::*)() >(&TRandom::Rndm));
+
+    DEBUG_MSG("Adding wrapper for Double_t TRandom::Rndm(Int_t) (" __HERE__ ")");
+    // signature to use in the veto list: Double_t TRandom::Rndm(Int_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:51:22
+    t.method("Rndm", static_cast<Double_t (TRandom::*)(Int_t) >(&TRandom::Rndm));
+
+    DEBUG_MSG("Adding wrapper for void TRandom::RndmArray(Int_t, Float_t *) (" __HERE__ ")");
+    // signature to use in the veto list: void TRandom::RndmArray(Int_t, Float_t *)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:52:22
+    t.method("RndmArray", static_cast<void (TRandom::*)(Int_t, Float_t *) >(&TRandom::RndmArray));
+
+    DEBUG_MSG("Adding wrapper for void TRandom::RndmArray(Int_t, Double_t *) (" __HERE__ ")");
+    // signature to use in the veto list: void TRandom::RndmArray(Int_t, Double_t *)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:53:22
+    t.method("RndmArray", static_cast<void (TRandom::*)(Int_t, Double_t *) >(&TRandom::RndmArray));
+
+    DEBUG_MSG("Adding wrapper for void TRandom::Sphere(Double_t &, Double_t &, Double_t &, Double_t) (" __HERE__ ")");
+    // signature to use in the veto list: void TRandom::Sphere(Double_t &, Double_t &, Double_t &, Double_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:54:22
+    t.method("Sphere", static_cast<void (TRandom::*)(Double_t &, Double_t &, Double_t &, Double_t) >(&TRandom::Sphere));
+
+    DEBUG_MSG("Adding wrapper for Double_t TRandom::Uniform(Double_t) (" __HERE__ ")");
+    // signature to use in the veto list: Double_t TRandom::Uniform(Double_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:55:22
+    t.method("Uniform", static_cast<Double_t (TRandom::*)(Double_t) >(&TRandom::Uniform));
+    t.method("Uniform", [](TRandom& a)->Double_t { return a.Uniform(); });
+    t.method("Uniform", [](TRandom* a)->Double_t { return a->Uniform(); });
+
+    DEBUG_MSG("Adding wrapper for Double_t TRandom::Uniform(Double_t, Double_t) (" __HERE__ ")");
+    // signature to use in the veto list: Double_t TRandom::Uniform(Double_t, Double_t)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:56:22
+    t.method("Uniform", static_cast<Double_t (TRandom::*)(Double_t, Double_t) >(&TRandom::Uniform));
+
+    DEBUG_MSG("Adding wrapper for void TRandom::WriteRandom(const char *) (" __HERE__ ")");
+    // signature to use in the veto list: void TRandom::WriteRandom(const char *)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:57:22
+    t.method("WriteRandom", static_cast<void (TRandom::*)(const char *)  const>(&TRandom::WriteRandom));
+
+    DEBUG_MSG("Adding wrapper for Version_t TRandom::Class_Version() (" __HERE__ ")");
+    // signature to use in the veto list: Version_t TRandom::Class_Version()
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:59:4
+    module_.method("TRandom!Class_Version", static_cast<Version_t (*)() >(&TRandom::Class_Version));
+
+    DEBUG_MSG("Adding wrapper for TClass * TRandom::IsA() (" __HERE__ ")");
+    // signature to use in the veto list: TClass * TRandom::IsA()
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:59:4
+    t.method("IsA", static_cast<TClass * (TRandom::*)()  const>(&TRandom::IsA));
+
+    DEBUG_MSG("Adding wrapper for void TRandom::StreamerNVirtual(TBuffer &) (" __HERE__ ")");
+    // signature to use in the veto list: void TRandom::StreamerNVirtual(TBuffer &)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:59:4
+    t.method("StreamerNVirtual", static_cast<void (TRandom::*)(TBuffer &) >(&TRandom::StreamerNVirtual));
+
+    DEBUG_MSG("Adding wrapper for const char * TRandom::DeclFileName() (" __HERE__ ")");
+    // signature to use in the veto list: const char * TRandom::DeclFileName()
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:59:4
+    module_.method("TRandom!DeclFileName", []() { return (std::string)TRandom::DeclFileName(); });
+
+    DEBUG_MSG("Adding wrapper for int TRandom::ImplFileLine() (" __HERE__ ")");
+    // signature to use in the veto list: int TRandom::ImplFileLine()
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:59:4
+    module_.method("TRandom!ImplFileLine", static_cast<int (*)() >(&TRandom::ImplFileLine));
+
+    DEBUG_MSG("Adding wrapper for const char * TRandom::ImplFileName() (" __HERE__ ")");
+    // signature to use in the veto list: const char * TRandom::ImplFileName()
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:59:4
+    module_.method("TRandom!ImplFileName", []() { return (std::string)TRandom::ImplFileName(); });
+
+    DEBUG_MSG("Adding wrapper for const char * TRandom::Class_Name() (" __HERE__ ")");
+    // signature to use in the veto list: const char * TRandom::Class_Name()
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:59:4
+    module_.method("TRandom!Class_Name", []() { return (std::string)TRandom::Class_Name(); });
+
+    DEBUG_MSG("Adding wrapper for TClass * TRandom::Dictionary() (" __HERE__ ")");
+    // signature to use in the veto list: TClass * TRandom::Dictionary()
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:59:4
+    module_.method("TRandom!Dictionary", static_cast<TClass * (*)() >(&TRandom::Dictionary));
+
+    DEBUG_MSG("Adding wrapper for TClass * TRandom::Class() (" __HERE__ ")");
+    // signature to use in the veto list: TClass * TRandom::Class()
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:59:4
+    module_.method("TRandom!Class", static_cast<TClass * (*)() >(&TRandom::Class));
+
+    DEBUG_MSG("Adding wrapper for void TRandom::Streamer(TBuffer &) (" __HERE__ ")");
+    // signature to use in the veto list: void TRandom::Streamer(TBuffer &)
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:59:4
+    t.method("Streamer", static_cast<void (TRandom::*)(TBuffer &) >(&TRandom::Streamer));
+
+    DEBUG_MSG("Adding wrapper for int TRandom::DeclFileLine() (" __HERE__ ")");
+    // signature to use in the veto list: int TRandom::DeclFileLine()
+    // defined in /home/pgras/.julia/conda/3/include/TRandom.h:59:4
+    module_.method("TRandom!DeclFileLine", static_cast<int (*)() >(&TRandom::DeclFileLine));
+  }
+
+private:
+  std::unique_ptr<jlcxx::TypeWrapper<TRandom>> type_;
+};
+std::shared_ptr<Wrapper> newJlTRandom(jlcxx::Module& module){
+  return std::shared_ptr<Wrapper>(new JlTRandom(module));
+}
+
+namespace jlcxx {
+  template<> struct IsMirroredType<TFitResultPtr> : std::false_type { };
+  template<> struct DefaultConstructible<TFitResultPtr> : std::false_type { };
+}
+
+// Class generating the wrapper for type TFitResultPtr
+// signature to use in the veto file: TFitResultPtr
+struct JlTFitResultPtr: public Wrapper {
+
+  JlTFitResultPtr(jlcxx::Module& jlModule): Wrapper(jlModule){
+    DEBUG_MSG("Adding wrapper for type TFitResultPtr (" __HERE__ ")");
+    // defined in /home/pgras/.julia/conda/3/include/TFitResultPtr.h:32:7
+    jlcxx::TypeWrapper<TFitResultPtr>  t = jlModule.add_type<TFitResultPtr>("TFitResultPtr");
+    type_ = std::unique_ptr<jlcxx::TypeWrapper<TFitResultPtr>>(new jlcxx::TypeWrapper<TFitResultPtr>(jlModule, t));
+  }
+
+  void add_methods() const{
+    auto& t = *type_;
+    t.template constructor<>(/*finalize=*/true);
+  }
+
+private:
+  std::unique_ptr<jlcxx::TypeWrapper<TFitResultPtr>> type_;
+};
+std::shared_ptr<Wrapper> newJlTFitResultPtr(jlcxx::Module& module){
+  return std::shared_ptr<Wrapper>(new JlTFitResultPtr(module));
+}
+
+namespace jlcxx {
   template<> struct IsMirroredType<TH1C> : std::false_type { };
   template<> struct DefaultConstructible<TH1C> : std::false_type { };
 template<> struct SuperType<TH1C> { typedef TH1 type; };
@@ -788,84 +1032,4 @@ private:
 };
 std::shared_ptr<Wrapper> newJlTArrayC(jlcxx::Module& module){
   return std::shared_ptr<Wrapper>(new JlTArrayC(module));
-}
-
-namespace jlcxx {
-  template<> struct IsMirroredType<TUrl> : std::false_type { };
-  template<> struct DefaultConstructible<TUrl> : std::false_type { };
-template<> struct SuperType<TUrl> { typedef TObject type; };
-}
-
-// Class generating the wrapper for type TUrl
-// signature to use in the veto file: TUrl
-struct JlTUrl: public Wrapper {
-
-  JlTUrl(jlcxx::Module& jlModule): Wrapper(jlModule){
-    DEBUG_MSG("Adding wrapper for type TUrl (" __HERE__ ")");
-    // defined in /home/pgras/.julia/conda/3/include/TUrl.h:33:7
-    jlcxx::TypeWrapper<TUrl>  t = jlModule.add_type<TUrl>("TUrl",
-      jlcxx::julia_base_type<TObject>());
-    type_ = std::unique_ptr<jlcxx::TypeWrapper<TUrl>>(new jlcxx::TypeWrapper<TUrl>(jlModule, t));
-  }
-
-  void add_methods() const{
-    auto& t = *type_;
-    t.template constructor<>(/*finalize=*/true);
-  }
-
-private:
-  std::unique_ptr<jlcxx::TypeWrapper<TUrl>> type_;
-};
-std::shared_ptr<Wrapper> newJlTUrl(jlcxx::Module& module){
-  return std::shared_ptr<Wrapper>(new JlTUrl(module));
-}
-
-namespace jlcxx {
-  template<> struct IsMirroredType<TFileOpenHandle> : std::false_type { };
-  template<> struct DefaultConstructible<TFileOpenHandle> : std::false_type { };
-template<> struct SuperType<TFileOpenHandle> { typedef TNamed type; };
-}
-
-// Class generating the wrapper for type TFileOpenHandle
-// signature to use in the veto file: TFileOpenHandle
-struct JlTFileOpenHandle: public Wrapper {
-
-  JlTFileOpenHandle(jlcxx::Module& jlModule): Wrapper(jlModule){
-    DEBUG_MSG("Adding wrapper for type TFileOpenHandle (" __HERE__ ")");
-    // defined in /home/pgras/.julia/conda/3/include/TFile.h:356:7
-    jlcxx::TypeWrapper<TFileOpenHandle>  t = jlModule.add_type<TFileOpenHandle>("TFileOpenHandle",
-      jlcxx::julia_base_type<TNamed>());
-    type_ = std::unique_ptr<jlcxx::TypeWrapper<TFileOpenHandle>>(new jlcxx::TypeWrapper<TFileOpenHandle>(jlModule, t));
-  }
-
-  void add_methods() const{
-    auto& t = *type_;
-
-    DEBUG_MSG("Adding wrapper for Bool_t TFileOpenHandle::Matches(const char *) (" __HERE__ ")");
-    // signature to use in the veto list: Bool_t TFileOpenHandle::Matches(const char *)
-    // defined in /home/pgras/.julia/conda/3/include/TFile.h:379:16
-    t.method("Matches", static_cast<Bool_t (TFileOpenHandle::*)(const char *) >(&TFileOpenHandle::Matches));
-
-    DEBUG_MSG("Adding wrapper for const char * TFileOpenHandle::GetOpt() (" __HERE__ ")");
-    // signature to use in the veto list: const char * TFileOpenHandle::GetOpt()
-    // defined in /home/pgras/.julia/conda/3/include/TFile.h:381:16
-    t.method("GetOpt", [](TFileOpenHandle const& a) { return (std::string)a.GetOpt(); });
-    t.method("GetOpt", [](TFileOpenHandle const* a) { return (std::string)a->GetOpt(); });
-
-    DEBUG_MSG("Adding wrapper for Int_t TFileOpenHandle::GetCompress() (" __HERE__ ")");
-    // signature to use in the veto list: Int_t TFileOpenHandle::GetCompress()
-    // defined in /home/pgras/.julia/conda/3/include/TFile.h:382:16
-    t.method("GetCompress", static_cast<Int_t (TFileOpenHandle::*)()  const>(&TFileOpenHandle::GetCompress));
-
-    DEBUG_MSG("Adding wrapper for Int_t TFileOpenHandle::GetNetOpt() (" __HERE__ ")");
-    // signature to use in the veto list: Int_t TFileOpenHandle::GetNetOpt()
-    // defined in /home/pgras/.julia/conda/3/include/TFile.h:383:16
-    t.method("GetNetOpt", static_cast<Int_t (TFileOpenHandle::*)()  const>(&TFileOpenHandle::GetNetOpt));
-  }
-
-private:
-  std::unique_ptr<jlcxx::TypeWrapper<TFileOpenHandle>> type_;
-};
-std::shared_ptr<Wrapper> newJlTFileOpenHandle(jlcxx::Module& module){
-  return std::shared_ptr<Wrapper>(new JlTFileOpenHandle(module));
 }

@@ -36,6 +36,7 @@ class JlROOT_TIOFeatures;
 class JlTIterator;
 class JlTVirtualTreePlayer;
 class JlTTreeFriendLeafIter;
+class JlTBranchPtr;
 class JlFileStat_t;
 class JlUserGroup_t;
 class JlSysInfo_t;
@@ -50,6 +51,7 @@ class JlTFileHandler;
 class JlTSignalHandler;
 class JlTStdExceptionHandler;
 class JlTTime;
+class JlFILE;
 class JlTInetAddress;
 class JlTVirtualPad;
 class JlTPad;
@@ -86,8 +88,10 @@ class JlTFormula;
 class JlTMethodCall;
 class JlROOT_Internal_TTreeReaderValueBase;
 class JlTTreeReader;
+class JlTTreeReaderValue;
 class JlTTreeReader_Iterator_t;
 class JlROOT_Internal_TTreeReaderArrayBase;
+class JlTTreeReaderArray;
 class JlGlobal;
 
 std::shared_ptr<Wrapper> newJlTObject(jlcxx::Module&);
@@ -116,6 +120,7 @@ std::shared_ptr<Wrapper> newJlROOT_TIOFeatures(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlTIterator(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlTVirtualTreePlayer(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlTTreeFriendLeafIter(jlcxx::Module&);
+std::shared_ptr<Wrapper> newJlTBranchPtr(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlFileStat_t(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlUserGroup_t(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlSysInfo_t(jlcxx::Module&);
@@ -130,6 +135,7 @@ std::shared_ptr<Wrapper> newJlTFileHandler(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlTSignalHandler(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlTStdExceptionHandler(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlTTime(jlcxx::Module&);
+std::shared_ptr<Wrapper> newJlFILE(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlTInetAddress(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlTVirtualPad(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlTPad(jlcxx::Module&);
@@ -166,8 +172,10 @@ std::shared_ptr<Wrapper> newJlTFormula(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlTMethodCall(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlROOT_Internal_TTreeReaderValueBase(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlTTreeReader(jlcxx::Module&);
+std::shared_ptr<Wrapper> newJlTTreeReaderValue(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlTTreeReader_Iterator_t(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlROOT_Internal_TTreeReaderArrayBase(jlcxx::Module&);
+std::shared_ptr<Wrapper> newJlTTreeReaderArray(jlcxx::Module&);
 std::shared_ptr<Wrapper> newJlGlobal(jlcxx::Module&);
 //method from libcxxwrap returning its version
 extern "C" JLCXX_API const char* cxxwrap_version_string();
@@ -231,6 +239,7 @@ throw_if_version_incompatibility();
     std::shared_ptr<Wrapper>(newJlTIterator(jlModule)),
     std::shared_ptr<Wrapper>(newJlTVirtualTreePlayer(jlModule)),
     std::shared_ptr<Wrapper>(newJlTTreeFriendLeafIter(jlModule)),
+    std::shared_ptr<Wrapper>(newJlTBranchPtr(jlModule)),
     std::shared_ptr<Wrapper>(newJlFileStat_t(jlModule)),
     std::shared_ptr<Wrapper>(newJlUserGroup_t(jlModule)),
     std::shared_ptr<Wrapper>(newJlSysInfo_t(jlModule)),
@@ -245,6 +254,7 @@ throw_if_version_incompatibility();
     std::shared_ptr<Wrapper>(newJlTSignalHandler(jlModule)),
     std::shared_ptr<Wrapper>(newJlTStdExceptionHandler(jlModule)),
     std::shared_ptr<Wrapper>(newJlTTime(jlModule)),
+    std::shared_ptr<Wrapper>(newJlFILE(jlModule)),
     std::shared_ptr<Wrapper>(newJlTInetAddress(jlModule)),
     std::shared_ptr<Wrapper>(newJlTVirtualPad(jlModule)),
     std::shared_ptr<Wrapper>(newJlTPad(jlModule)),
@@ -281,8 +291,10 @@ throw_if_version_incompatibility();
     std::shared_ptr<Wrapper>(newJlTMethodCall(jlModule)),
     std::shared_ptr<Wrapper>(newJlROOT_Internal_TTreeReaderValueBase(jlModule)),
     std::shared_ptr<Wrapper>(newJlTTreeReader(jlModule)),
+    std::shared_ptr<Wrapper>(newJlTTreeReaderValue(jlModule)),
     std::shared_ptr<Wrapper>(newJlTTreeReader_Iterator_t(jlModule)),
     std::shared_ptr<Wrapper>(newJlROOT_Internal_TTreeReaderArrayBase(jlModule)),
+    std::shared_ptr<Wrapper>(newJlTTreeReaderArray(jlModule)),
     std::shared_ptr<Wrapper>(newJlGlobal(jlModule))
   };
 

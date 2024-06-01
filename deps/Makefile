@@ -5,6 +5,7 @@
 #
 BUILD_DIR = build
 ROOT_CONFIG = root-config
+UNAME=$(shell uname)
 
 ROOT_LIBS = $(shell $(ROOT_CONFIG) --libs)
 ROOT_INC_DIR = $(shell $(ROOT_CONFIG) --incdir)
@@ -39,7 +40,7 @@ LINK.o = $(CXX) $(LDFLAGS) $(TARGET_ARCH)
 
 .PHONY: all clean distclean run_demo run_demo2 check_root make_lib_from_objs
 
-PRODUCTS = libjlROOT2$(SO_SUFFIX)
+PRODUCTS = $(BUILD_DIR)/libjlROOT2$(SO_SUFFIX)
 
 #Define WRAPPER_CXX
 #WRAPPER_CXX: = $(file < src/generated_cxx) Extra.cxx #does not work on MacOS
@@ -59,7 +60,7 @@ distclean:
 
 
 $(BUILD_DIR):
-	@mkdir $(BUILD_DIR)
+	@mkdir -p $(BUILD_DIR)
 	@echo 'all:\n\n%:\n\t$$(MAKE) -C .. $$@\nclean:\n\t$$(MAKE) -C .. clean build\n' > $(BUILD_DIR)/Makefile
 
 $(BUILD_DIR)/ROOT2-generated.wit: ROOT2.wit $(BUILD_DIR)
@@ -99,7 +100,7 @@ $(BUILD_DIR)/%.o: src/%.cxx $(BUILD_DIR)
 	[ -d $(BUILD_DIR)/libROOT2/build ] || mkdir -p $(BUILD_DIR)/libROOT2/build
 	$(COMPILE.cc) $(CPPFLAGS) -o $@ $<
 
-libjlROOT2$(SO_SUFFIX): $(OBJS)
+$(BUILD_DIR)/libjlROOT2$(SO_SUFFIX): $(OBJS)
 	$(MAKE) check_root
 	$(LINK.o) -o $@ --shared -fPIC $(OBJS) $(ROOT_LIBS) $(LDLIBS)
 
